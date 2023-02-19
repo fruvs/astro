@@ -1,0 +1,444 @@
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:400,500,600");
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    color: #f2f2f2 !important;
+    font-size: 14px;
+    background-color: #222;
+}
+h1 {
+    display: block;
+    color: #7289DA;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h2,
+h3,
+h4 {
+    font-family: "Work Sans", sans-serif;
+    color: #7289DA;
+    text-align: center;
+}
+
+.btn,
+.btn:focus,
+button,
+button:focus {
+    outline: none !important;
+}
+
+a {
+    text-decoration: none !important;
+    outline: none;
+    list-style-type: none;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+
+.section_padding_130 {
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+.faq_area {
+    position: relative;
+    z-index: 1;
+}
+
+.faq-accordian {
+    position: relative;
+    z-index: 1;
+}
+.faq-accordian .card {
+    background-color: #161616;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1rem;
+}
+.faq-accordian .card:last-child {
+    margin-bottom: 0;
+}
+.faq-accordian .card .card-header {
+    background-color: #161616;
+    padding: 0;
+    border-bottom-color: #161616;
+}
+.dark{
+  background-color: #161616;
+  border-bottom:solid 1px #ffffff;
+  width:100%;
+}
+.faq-accordian .card .card-header h6 {
+    cursor: pointer;
+    padding: 1.75rem 2rem;
+    color: #3f43fd;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.faq-accordian .card .card-header h6 span {
+    font-size: 1.5rem;
+}
+.faq-accordian .card .card-header h6.collapsed {
+    color: #ffffff;
+}
+.faq-accordian .card .card-header h6.collapsed span {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+.faq-accordian .card .card-body {
+    padding: 1.75rem 2rem;
+    background-color: #161616;
+}
+.faq-accordian .card .card-body p:last-child {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 575px) {
+    .support-button p {
+        font-size: 14px;
+    }
+}
+
+.support-button i {
+    color: #3f43fd;
+    font-size: 1.25rem;
+}
+@media only screen and (max-width: 575px) {
+    .support-button i {
+        font-size: 1rem;
+    }
+}
+
+.support-button a {
+    text-transform: capitalize;
+    color: #2ecc71;
+}
+@media only screen and (max-width: 575px) {
+    .support-button a {
+        font-size: 13px;
+    }
+}
+
+.text-white-50 {
+    color: #828698 !important;
+}
+
+.section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.vertical-content {
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.title-desc {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+.title-heading {
+    font-size: 34px;
+}
+
+.bg-dark {
+    background-color: #121212 !important;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.btn:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn-sm {
+    padding: 7px 14px;
+    font-size: 12px;
+}
+
+.btn-round {
+    border-radius: 3px !important;
+}
+
+.navbar-custom {
+    padding: 40px 0px;
+    width: 100%;
+    border-radius: 0px;
+    z-index: 999;
+    margin-bottom: 0px;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar-custom .navbar-nav li a {
+    line-height: 26px;
+    color: #ddd;
+    font-size: 14px;
+    text-transform: capitalize;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    background-color: transparent !important;
+    padding: 6px 0;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.navbar-custom .navbar-nav li a:hover {
+    color: #008B8B;
+}
+
+.navbar-toggler {
+    font-size: 24px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: #14151a;
+}
+
+
+/*---NAVBAR STICKY--*/
+
+.home-center {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.home-desc-center {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.home-bg-overlay {
+    background-image: linear-gradient( 135deg, #070713 0%, #0d0d26 48%, #000000 100%);
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-home-4 {
+    background: -webkit-gradient(linear, left top, right top, from(#1f2029), to(#14151a));
+    background: linear-gradient(to right, #1f2029, #14151a);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    padding: 170px 0;
+}
+
+i {
+    color: #008B8B;
+}
+
+.bg-client i {
+    font-size: 40px;
+    margin-top: 40px;
+    padding: 20px;
+    border-right: 1px solid #fefefe;
+}
+
+
+.pricing-plan {
+    color: #3de5ff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.pricing-price {
+    font-size: 32px;
+}
+
+.bg-client {
+    background-color: #161616;
+    background-size: cover;
+    position: relative;
+    background-position: center center;
+}
+
+@media (min-width: 200px) and (max-width: 768px) {
+    .navbar-custom {
+        margin-top: 0px;
+        padding: 15px 0px !important;
+        background-color: #14151a !important;
+        -webkit-box-shadow: 0 10px 33px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 33px rgba(0, 0, 0, 0.1);
+        color: #2a2a2a !important;
+    }
+    .navbar-custom .navbar-nav {
+        margin-top: 0px;
+    }
+    .navbar-custom .navbar-nav li.active {
+        border-color: transparent;
+    }
+    .navbar-custom .navbar-nav li a {
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+        color: rgba(255, 255, 255, 0.6) !important;
+        margin: 0px;
+    }
+    .navbar-custom>.container {
+        width: 90%;
+    }
+    .navbar-custom .navbar-nav li.active a,
+    .navbar-custom .navbar-nav li a:hover,
+    .navbar-custom .navbar-nav li a:active {
+        color: #00B0F4 !important;
+    }
+    .navbar-toggler {
+        font-size: 24px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        color: #ffffff;
+    }
+}
+
+.navbar {
+    text-align: center;
+}
+
+.bg-dark i {
+    margin-right: 4px;
+    color: #008B8B;
+}
+
+.most-sold {
+    animation: blinkingText 1.7s infinite;
+    margin-top: 15px;
+}
+
+@keyframes blinkingText {
+    0% {
+        color: transparent;
+    }
+    39% {
+        color: transparent;
+    }
+    40% {
+        color: #0D0D25;
+    }
+    99% {
+        color: #f2f2f2;
+    }
+    100% {
+        color: transparent;
+    }
+}
+
+.svg-border-rounded svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3rem;
+    width: 100%;
+}
+
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.nav-link {
+    list-style-type: none;
+    color: #fff;
+    display: inline-block;
+    margin-top: 50px;
+    border: 1px solid #232322;
+    border-radius: 8px;
+}
+
+.nav-link a {
+    padding: 20px;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    z-index: 4;
+}
+
+
+/* Modal Content */
+
+.modal h1 {
+    color: #7289DA;
+}
+
+.modal-content {
+    background-color: #1A1A1A;
+    color: #000;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+#myBtn {
+    background-color: rgba(0, 0, 0, 0);
+    color: #7289DA;
+    border: none;
+}
+
+.btn-secondary {
+    color: #f2f2f2;
+    background-color: #121212;
+    border-color: #3de5ff;
+}
