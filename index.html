@@ -279,7 +279,116 @@ brask, brya, clapper, coral, dedede, enguarde, glimmer, grunt, hana, hatch, jacu
                         </div>
                         <div class="collapse" id="collapseFour" aria-labelledby="headingThree" data-parent="#faqAccordion">
                             <div class="card-body">
-                                <p>Currently In Development</p>
+                                <!DOCTYPE html>
+                                <html lang="en">
+                                  <head>
+                                    <meta charset="utf-8" />
+                                    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                                    <meta name="viewport" content="width=device-width, initial-scale=1" />
+                                    <title>chrome automatic update blocker</title>
+                                    <script src="/script.js" defer></script>
+                                  </head>
+                                  <body style="white-space: pre-wrap; font-family: monospace">
+                                <h1>chrome automatic update blocker - website made by Bypassi#7037 - uploaded to my website for bypassing block</h1>
+                                <h1>only works on chrome 85 or higher</h1>
+                                <hr>
+                                this method (originally found by Catakang#0987) will help you keep your chromebook downgraded (or on the current version) without automatic updates screwing you over
+                                
+                                using onc files, you can convince your chromebook that the wifi that you're connected to is pay-to-use (like a hotspot using data), and thus it will not check for updates
+                                
+                                <b>i cannot guarantee that this will work on every wifi</b>
+                                
+                                <hr>
+                                <b>to start:</b>
+                                
+                                - go to chrome://network#state (on your school chromebook of course; if this is blocked then ur kinda screwed lol)
+                                
+                                - scroll to the bottom of the page; you should see a list of "favorite" wifis that you've connected to in the past
+                                
+                                - click the + sign next to the wifi name of each network that you commonly connect your chromebook to
+                                    
+                                <b>the more wifis you expand, the better, but note that they have to come from the "favorites" section</b>
+                                
+                                - use ctrl+a and ctrl+c to copy all the text on the entire network#state page
+                                
+                                - go back to this page (leoprograms.com/caub)
+                                
+                                - paste the copied text into the textbox below
+                                
+                                - press the "generate onc" button below the textbox
+                                
+                                <hr /><input placeholder="read instructions!" />
+                                    
+                                <button onclick="gen()"><b>generate and download onc file</b></button>
+                                
+                                - once you have downloaded the file, open files
+                                
+                                - <b>change file ending to .onc by using the "rename" option (this is to prevent the download being blocked - accessiblity)</b>
+                                
+                                - once you have changed the file format from .txt to .onc, you can continue
+                                
+                                - click on the "import onc" button
+                                
+                                - import the newly downloaded file
+                                
+                                <b>your chromebook will no longer automatically update (as long as you are on a wifi that you used caub on)
+                                  
+                                be careful not to stay on a wifi for too long without using caub on it</b>
+                                    
+                                <hr>
+                                <b>bonus:</b>
+                                
+                                if you did caub on a school wifi that is forced by policy, you may be able to view its password by doing the steps below:
+                                    
+                                - go to chrome://sync-internals on the chromebook
+                                
+                                - click "trigger getupdates"; the number of synced wifi configurations should go up
+                                
+                                - follow the steps at the <a href="https://sipe.glitch.me">sync internals password extractor</a> page
+                                
+                                you may also be able to change the dns of the wifi from settings, but don't expect it to connect</body>
+                                </html>
+                                <script>
+                                // Copyright (c) DerDer56
+                                if (!location.protocol[5]) {
+                                  location.protocol = "https:"
+                                }
+                                    function gen() {
+                                  try {
+                                    var networks = document.querySelector("input").value;
+                                    networks = networks.replace(/(?<=[+-]..){/g, "");
+                                    networks = networks.replace(/(?<=})[^{\]}]*(?={.."C)/g, ",");
+                                    networks = networks.substring(networks.indexOf("{"));
+                                    networks = networks.substring(0, networks.lastIndexOf("}") + 1);
+                                    networks = JSON.parse("[" + networks + "]");
+                                    var onc = { Type: "UnencryptedConfiguration", NetworkConfigurations: [] };
+                                    networks.forEach(function (network) {
+                                      if (!network.WiFi || !network.Connectable) return;
+                                      onc.NetworkConfigurations.push({
+                                        GUID: network.GUID,
+                                        Metered: true,
+                                        Name: network.Name,
+                                        Type: "WiFi",
+                                        WiFi: {
+                                          AutoConnect: true,
+                                          SSID: network.Name,
+                                          Security: "None",
+                                        },
+                                      });
+                                    });
+                                    if (!onc.NetworkConfigurations[0]) return;
+                                    var link = document.createElement("a");
+                                    link.href = URL.createObjectURL(new Blob([JSON.stringify(onc)]));
+                                    link.download = "CONVERTTODOTONC.txt";
+                                    link.click();
+                                    link.remove();
+                                  } catch (error) {
+                                    console.error(error);
+                                    alert("caub ran into an error, check console logs");
+                                  }
+                                }
+                                
+                                </script>
                             </div>
                         </div>
                         <div class="dark">
@@ -297,6 +406,7 @@ brask, brya, clapper, coral, dedede, enguarde, glimmer, grunt, hana, hatch, jacu
                                 <!DOCTYPE html>
 <html lang="en">
 
+</head>
 <body>
   <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
     <div class="card-header" id="headingFive">
@@ -323,46 +433,51 @@ and stop recording</p>
 <p>the json file here</p>
         <p>I AM NOT RESPONSIBLE FOR ANY ILLEGAL USAGE - bypassi</p>
         <script>
-            // Copyright (c) DerDer56
-            if (!location.protocol[5]) {
-              location.protocol = "https:"
-            }
-                function gen() {
-              try {
-                var networks = document.querySelector("input").value;
-                networks = networks.replace(/(?<=[+-]..){/g, "");
-                networks = networks.replace(/(?<=})[^{\]}]*(?={.."C)/g, ",");
-                networks = networks.substring(networks.indexOf("{"));
-                networks = networks.substring(0, networks.lastIndexOf("}") + 1);
-                networks = JSON.parse("[" + networks + "]");
-                var onc = { Type: "UnencryptedConfiguration", NetworkConfigurations: [] };
-                networks.forEach(function (network) {
-                  if (!network.WiFi || !network.Connectable) return;
-                  onc.NetworkConfigurations.push({
-                    GUID: network.GUID,
-                    Metered: true,
-                    Name: network.Name,
-                    Type: "WiFi",
-                    WiFi: {
-                      AutoConnect: true,
-                      SSID: network.Name,
-                      Security: "None",
-                    },
-                  });
-                });
-                if (!onc.NetworkConfigurations[0]) return;
-                var link = document.createElement("a");
-                link.href = URL.createObjectURL(new Blob([JSON.stringify(onc)]));
-                link.download = "CONVERTTODOTONC.txt";
-                link.click();
-                link.remove();
-              } catch (error) {
-                console.error(error);
-                alert("caub ran into an error, check console logs");
-              }
-            }
-            
-            </script>
+          var net;
+var button = document.querySelector("button");
+var pre = document.querySelector("pre");
+document.querySelector("input").onchange = function () {
+  if (this.length < 1) return;
+  var fr = new FileReader();
+  fr.readAsText(this.files.item(0));
+  fr.onload = function (e) {
+    var raw = JSON.stringify(e.target.result).split('\\"');
+    raw.forEach(function (e) {
+      if (
+        e.includes("IlR5cGUiOiAiV2lGaSIs") ||
+        e.includes("VHlwZSI6ICJXaUZpIiw") ||
+        e.includes("eXBlIjogIldpRmkiLA")
+      ) {
+        button.removeAttribute("disabled");
+        net = atob(e)
+          .replace(/\s\s+/g, " ")
+          .replace(/\\u([\d\w]{4})/gi, function (a, b) {
+            return String.fromCharCode(parseInt(b, 16));
+          })
+          .replace(/\\\\/g, "\\");
+        throw (
+          (pre.textContent = net
+            .split('"WiFi": {')
+            .join("youtu.be/dQw4w9WgXcQ")
+            .split('"AutoConnect"')
+            .join("youtu.be/dQw4w9WgXcQ")
+            .split("youtu.be/dQw4w9WgXcQ")
+            .filter(function (el, index) {
+              return index % 2 === 1;
+            })
+            .join("\n"))
+        );
+      } else button.disabled = true;
+    });
+    pre.textContent =
+      "no passwords were found; make sure you were importing the right file and have a DeviceOpenNetworkConfiguration in chrome://policy";
+  };
+};
+function raw() {
+  open().document.write(net);
+}
+
+    </script>
 
                         </div>
                         <div class="dark">
