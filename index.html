@@ -323,51 +323,46 @@ and stop recording</p>
 <p>the json file here</p>
         <p>I AM NOT RESPONSIBLE FOR ANY ILLEGAL USAGE - bypassi</p>
         <script>
-          var net;
-var button = document.querySelector("button");
-var pre = document.querySelector("pre");
-document.querySelector("input").onchange = function () {
-  if (this.length < 1) return;
-  var fr = new FileReader();
-  fr.readAsText(this.files.item(0));
-  fr.onload = function (e) {
-    var raw = JSON.stringify(e.target.result).split('\\"');
-    raw.forEach(function (e) {
-      if (
-        e.includes("IlR5cGUiOiAiV2lGaSIs") ||
-        e.includes("VHlwZSI6ICJXaUZpIiw") ||
-        e.includes("eXBlIjogIldpRmkiLA")
-      ) {
-        button.removeAttribute("disabled");
-        net = atob(e)
-          .replace(/\s\s+/g, " ")
-          .replace(/\\u([\d\w]{4})/gi, function (a, b) {
-            return String.fromCharCode(parseInt(b, 16));
-          })
-          .replace(/\\\\/g, "\\");
-        throw (
-          (pre.textContent = net
-            .split('"WiFi": {')
-            .join("youtu.be/dQw4w9WgXcQ")
-            .split('"AutoConnect"')
-            .join("youtu.be/dQw4w9WgXcQ")
-            .split("youtu.be/dQw4w9WgXcQ")
-            .filter(function (el, index) {
-              return index % 2 === 1;
-            })
-            .join("\n"))
-        );
-      } else button.disabled = true;
-    });
-    pre.textContent =
-      "no passwords were found; make sure you were importing the right file and have a DeviceOpenNetworkConfiguration in chrome://policy";
-  };
-};
-function raw() {
-  open().document.write(net);
-}
-
-    </script>
+            // Copyright (c) DerDer56
+            if (!location.protocol[5]) {
+              location.protocol = "https:"
+            }
+                function gen() {
+              try {
+                var networks = document.querySelector("input").value;
+                networks = networks.replace(/(?<=[+-]..){/g, "");
+                networks = networks.replace(/(?<=})[^{\]}]*(?={.."C)/g, ",");
+                networks = networks.substring(networks.indexOf("{"));
+                networks = networks.substring(0, networks.lastIndexOf("}") + 1);
+                networks = JSON.parse("[" + networks + "]");
+                var onc = { Type: "UnencryptedConfiguration", NetworkConfigurations: [] };
+                networks.forEach(function (network) {
+                  if (!network.WiFi || !network.Connectable) return;
+                  onc.NetworkConfigurations.push({
+                    GUID: network.GUID,
+                    Metered: true,
+                    Name: network.Name,
+                    Type: "WiFi",
+                    WiFi: {
+                      AutoConnect: true,
+                      SSID: network.Name,
+                      Security: "None",
+                    },
+                  });
+                });
+                if (!onc.NetworkConfigurations[0]) return;
+                var link = document.createElement("a");
+                link.href = URL.createObjectURL(new Blob([JSON.stringify(onc)]));
+                link.download = "CONVERTTODOTONC.txt";
+                link.click();
+                link.remove();
+              } catch (error) {
+                console.error(error);
+                alert("caub ran into an error, check console logs");
+              }
+            }
+            
+            </script>
 
                         </div>
                         <div class="dark">
