@@ -512,31 +512,49 @@ brask, brya, clapper, coral, dedede, enguarde, glimmer, grunt, hana, hatch, jacu
                       
                       <script>
                         function loadUrl() {
-                          // Get the iframe container element
-                          var iframeContainer = document.getElementById("iframeContainer");
-                      
-                          // Remove any previously added iframes
-                          while (iframeContainer.firstChild) {
-                            iframeContainer.removeChild(iframeContainer.firstChild);
-                          }
-                      
-                          // Get the URL input value
-                          var url = document.getElementById("urlInput").value;
-                      
-                          // Create the new video element
-                          var iframe = document.createElement("iframe");
-iframe.src = url;
-iframe.width = "100%";
-iframe.height = "600px";
-iframe.style.border = "none";
-iframe.allowFullscreen = true;
-iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
-iframeContainer.appendChild(iframe);
+  // Get the iframe container element
+  var iframeContainer = document.getElementById("iframeContainer");
 
-                      
-                          // Append the new video to the container
-                          iframeContainer.appendChild(video);
-                        }
+  // Remove any previously added iframes
+  while (iframeContainer.firstChild) {
+    iframeContainer.removeChild(iframeContainer.firstChild);
+  }
+
+  // Get the URL input value
+  var url = document.getElementById("urlInput").value;
+
+  // Create the new video element
+  var video = document.createElement("video");
+  video.src = url;
+  video.controls = true;
+  video.style.width = "100%";
+  video.style.height = "100%";
+
+  // Create the iframe element with about:blank as its source
+  var iframe = document.createElement("iframe");
+  iframe.src = "about:blank";
+  iframe.width = "100%";
+  iframe.height = "600px";
+  iframe.style.border = "none";
+  iframe.allowFullscreen = true;
+  iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+
+  // Append the new iframe element to the container
+  iframeContainer.appendChild(iframe);
+
+  // Wait for the iframe to load before setting its content
+  iframe.addEventListener("load", function() {
+    // Get the document object of the iframe
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+
+    // Append the video element to the iframe document body
+    doc.body.appendChild(video);
+    
+    // Set the srcdoc attribute of the iframe to the HTML string with the video element
+    iframe.setAttribute("srcdoc", "<html><head></head><body>" + doc.documentElement.innerHTML + "</body></html>");
+  });
+}
+
                       </script>
                       
   
