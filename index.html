@@ -487,7 +487,7 @@ brask, brya, clapper, coral, dedede, enguarde, glimmer, grunt, hana, hatch, jacu
                     </div>
                     <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
                         <div class="card-header border-top" id="headingSeven">
-                          <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">Youtube Video Embeder<span class="lni-chevron-up"></span></h6>
+                          <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">Another Title<span class="lni-chevron-up"></span></h6>
                         </div>
                         <div class="collapse" id="collapseSeven" aria-labelledby="headingSeven" data-parent="#faqAccordion">
                           <div class="card-body">
@@ -497,8 +497,8 @@ brask, brya, clapper, coral, dedede, enguarde, glimmer, grunt, hana, hatch, jacu
                             <div>
                               <form>
                                 <div class="form-group">
-                                  <label for="urlInput">Enter the direct link to the video :</label>
-                                  <input type="text" class="form-control" id="urlInput" placeholder="https://www.youtube.com/embed/some letters">
+                                  <label for="urlInput">Enter the direct link to the video file:</label>
+                                  <input type="text" class="form-control" id="urlInput" placeholder="https://www.youtube.com/embed/some">
                                 </div>
                                 <button type="button" class="btn btn-primary" onclick="loadUrl()">Load URL</button>
                               </form>
@@ -512,49 +512,31 @@ brask, brya, clapper, coral, dedede, enguarde, glimmer, grunt, hana, hatch, jacu
                       
                       <script>
                         function loadUrl() {
-  // Get the iframe container element
-  var iframeContainer = document.getElementById("iframeContainer");
+                          // Get the iframe container element
+                          var iframeContainer = document.getElementById("iframeContainer");
+                      
+                          // Remove any previously added iframes
+                          while (iframeContainer.firstChild) {
+                            iframeContainer.removeChild(iframeContainer.firstChild);
+                          }
+                      
+                          // Get the URL input value
+                          var url = document.getElementById("urlInput").value;
+                      
+                          // Create the new video element
+                          var iframe = document.createElement("iframe");
+iframe.src = url;
+iframe.width = "100%";
+iframe.height = "600px";
+iframe.style.border = "none";
+iframe.allowFullscreen = true;
+iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+iframeContainer.appendChild(iframe);
 
-  // Remove any previously added iframes
-  while (iframeContainer.firstChild) {
-    iframeContainer.removeChild(iframeContainer.firstChild);
-  }
-
-  // Get the URL input value
-  var url = document.getElementById("urlInput").value;
-
-  // Create the new video element
-  var video = document.createElement("video");
-  video.src = url;
-  video.controls = true;
-  video.style.width = "100%";
-  video.style.height = "100%";
-
-  // Create the iframe element with about:blank as its source
-  var iframe = document.createElement("iframe");
-  iframe.src = "about:blank";
-  iframe.width = "100%";
-  iframe.height = "600px";
-  iframe.style.border = "none";
-  iframe.allowFullscreen = true;
-  iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
-
-  // Append the new iframe element to the container
-  iframeContainer.appendChild(iframe);
-
-  // Wait for the iframe to load before setting its content
-  iframe.addEventListener("load", function() {
-    // Get the document object of the iframe
-    var doc = iframe.contentDocument || iframe.contentWindow.document;
-
-    // Append the video element to the iframe document body
-    doc.body.appendChild(video);
-    
-    // Set the srcdoc attribute of the iframe to the HTML string with the video element
-    iframe.setAttribute("srcdoc", "<html><head></head><body>" + doc.documentElement.innerHTML + "</body></html>");
-  });
-}
-
+                      
+                          // Append the new video to the container
+                          iframeContainer.appendChild(video);
+                        }
                       </script>
                       
   
