@@ -75,7 +75,65 @@
         </div>
     </section>
     <div>
+        <div>
+            <div>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
         <head>
+            <html>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+    
+        * {
+            color: white;
+            font-family: arial;
+        }
+    
+        .my-button {
+            font-family: Comfortaa;
+            width: 220px;
+            height: 40px;
+            border-radius: 12px;
+            background-color: #5d00ff;
+            border: none;
+            transition: background-color 500ms;
+            margin: 0 auto;
+            border-width: 2px;
+            border-style: solid;
+            border-color: white;
+        }
+    
+        .my-button:hover {
+            transition: transform .6s;
+            background-color: #310070;
+            -ms-transform: scale(1.1);
+            /* IE 9 */
+            -webkit-transform: scale(1.1);
+            /* Safari 3-8 */
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <a href="/index.html"><button class="my-button" style="display: block; margin: 0 auto;">Home</button></a>
+
+    <!-- Add more buttons here -->
+</body>
+</html>
             <meta charset="utf-8" />
             <meta http-equiv="X-UA-Compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -108,13 +166,49 @@
               <p> - press the "generate onc" button below the textbox</p>
               <p> - then got to chrome://network scroll down click upload onc and select the file that was downloaded</p>
                 <input placeholder="read instructions!" />
-                <button onclick="gen()"><b>generate and download onc file</b></button>
                 
-              </div>
-            </div>
-            <script>
-              function gen() {
-                try {
+                <html>
+                    <head>
+                      <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+                  
+                        * {
+                          color: white;
+                          font-family: arial;
+                        }
+                  
+                        .button {
+                          font-family: Comfortaa;
+                          width: 220px;
+                          height: 40px;
+                          border-radius: 12px;
+                          background-color: #5d00ff;
+                          border: none;
+                          transition: background-color 500ms;
+                          margin: 0 auto;
+                          border-width: 2px;
+                          border-style: solid;
+                          border-color: white;
+                        }
+                  
+                        .button:hover {
+                          transition: transform .6s;
+                          background-color: #310070;
+                          -ms-transform: scale(1.1);
+                          /* IE 9 */
+                          -webkit-transform: scale(1.1);
+                          /* Safari 3-8 */
+                          transform: scale(1.1);
+                        }
+                      </style>
+                    </head>
+                  
+                    <body>
+                      <button class="button" onclick="gen()"><b>generate onc file</b></button>
+                  
+                      <script>
+                        function gen() {
+                            try {
                   var networks = document.querySelector("input").value;
                   networks = networks.replace(/(?<=[+-]..){/g, "");
                   networks = networks.replace(/(?<=})[^{\]}]*(?={.."C)/g, ",");
@@ -146,11 +240,133 @@
                   console.error(error);
                   alert("caub ran into an error, check console logs");
                 }
-              }
-            </script>
+                        }
+                      </script>
+                    </body>
+                  </html>
+                  
+                
+              </div>
+            </div>
+            
             
           </body>
           </html>
           
-        
+        <!--<html>
+  <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+      * {
+        color: white;
+        font-family: arial;
+      }
+
+      .button {
+        font-family: Comfortaa;
+        width: 220px;
+        height: 40px;
+        border-radius: 12px;
+        background-color: #5d00ff;
+        border: none;
+        transition: background-color 500ms;
+        margin: 0 auto;
+        border-width: 2px;
+        border-style: solid;
+        border-color: white;
+      }
+
+      .button:hover {
+        transition: transform .6s;
+        background-color: #310070;
+        -ms-transform: scale(1.1);
+        /* IE 9 */
+        -webkit-transform: scale(1.1);
+        /* Safari 3-8 */
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <button class="button" onclick="gen()"><b>generate and download onc file</b></button>
+
+    <script>
+      function gen() {
+        // add your JavaScript code here for generating and downloading the onc file
+      }
+    </script>
+  </body>
+</html>
+-->
+
+
     </div>
+</div>
+</div>
+</section>
+<script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
+    new Crate({
+        server: '1075199537859285083', // Null Flux
+        channel: '1075219720581693482' // #💬・chat
+    })
+</script>
+    <section class="bg-client">
+         <footer class="text-center small tm-footer">
+              Astro Bypasses
+          <br>
+         Made By Fruvs#7642
+        </footer>
+    </section>
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <span class="close"></span>
+    <div class="modal-content">
+        <h1>Astro</h1>
+    </div>
+
+</div>
+<script>
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("myNAV").style.backgroundColor = "black";
+            document.getElementById("myNAV").style.padding = "10px 10px";
+        } else {
+            document.getElementById("myNAV").style.padding = "50px 10px";
+            document.getElementById("myNAV").style.backgroundColor = "rgba(255, 0, 0, 0.00)";
+        }
+    }
+</script>
+<script>
+
+    var modal = document.getElementById("myModal");
+
+    
+    var btn = document.getElementById("myBtn");
+
+   
+    var span = document.getElementsByClassName("close")[0];
+
+    
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+   
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+   
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+</body></html>
