@@ -85,7 +85,7 @@
                         <div class="row">
                             <i class="far fa-gem"></i>
                             <div class="col-8 text-left">
-                                <h1 class="font-m">Chrome Auto Update Blocker</h1>
+                                <h1 class="font-m">Useful Tools</h1>
                                 <p class="gray">
                                     <html>
                                     <body>
@@ -127,52 +127,14 @@
                                                 </style>
                                             </head>
                                             <body>
-                                                
+                                                <p>Auto Update Blocker</p>
                                                 <a href="/CAUB.html"><button class="my-button" style="display: block; margin: 0 auto;">CAUB</button></a>
-                                                <!-- Add more buttons here -->
+                                                <p>Wifi password finder</p>
+                                                <a href="/wifitool.html"><button class="my-button" style="display: block; margin: 0 auto;">Wifi Tool</button></a>
+                                                
                                             </body>
                                             </html>
-                                            <!-- <html>
-                                            <head>
-                                                <style>
-                                                    @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
-                                                
-                                                    * {
-                                                        color: white;
-                                                        font-family: arial;
-                                                    }
-                                                
-                                                    .my-button {
-                                                        font-family: Comfortaa;
-                                                        width: 220px;
-                                                        height: 40px;
-                                                        border-radius: 12px;
-                                                        background-color: #5d00ff;
-                                                        border: none;
-                                                        transition: background-color 500ms;
-                                                        margin: 0 auto;
-                                                        border-width: 2px;
-                                                        border-style: solid;
-                                                        border-color: white;
-                                                    }
-                                                
-                                                    .my-button:hover {
-                                                        transition: transform .6s;
-                                                        background-color: #310070;
-                                                        -ms-transform: scale(1.1);
-                                                        /* IE 9 */
-                                                        -webkit-transform: scale(1.1);
-                                                        /* Safari 3-8 */
-                                                        transform: scale(1.1);
-                                                    }
-                                                </style>
-                                            </head>
-                                            <body>
-                                                
-                                                <a href="/CAUB.html"><button class="my-button" style="display: block; margin: 0 auto;">CAUB</button></a>
-                                               add more
-                                            </body>
-                                            </html>-->
+                                            
                                 
 
                                     <div></div>
@@ -192,7 +154,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 pt-5">
-                        <div class="row">
+                                 <div class="row">
                             <i class="fas fa-gem"></i>
                             <div class="col-8 text-left">
                                 <h1 class="font-m">LTBEEF</h1>
@@ -364,91 +326,7 @@ brask, brya, clapper, coral, dedede, enguarde, glimmer, grunt, hana, hatch, jacu
                     </div>
                     
                    
-                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                        <div class="card-header" id="headingFive">
-                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">Wi-Fi Password extractor<span class="lni-chevron-up"></span></h6>
-                        </div>
-                        <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#faqAccordion">
-                            <div class="card-body">
-                                
-                                <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Wi-Fi Password Reader</title>
-    <style>
-        body {
-            color: white;
-        }
-        input, button {
-            color: black;
-        }
-    </style>
-</head>
-<body>
-    <p>To start go to chrome://sync-internals </p>
-    <p>Then click on the "search" tab
-        and search for "wifi_"
-    </p>
-    <p>then click on:
-        the wifi of your choice</p>
-    <p>then paste all the code that shows up into the input box
-        and press the magic button</p>
-        <p>The name and password will show up as grey so copy the space below</p>
-    <input type="text" id="input">
-    <button type="button" onclick="magic()">Magic</button>
-    <pre id="output"></pre>
-    <script>
-        function hex(wifi, way) {
-            return way
-                ? wifi
-                    .split("")
-                    .map((e) => e.charCodeAt(0).toString(16).padStart(2, "0"))
-                    .join("")
-                    .toUpperCase() + "<||>psk"
-                : wifi
-                    .split(/(\w\w)/g)
-                    .filter((e) => !!e)
-                    .map((e) => String.fromCharCode(parseInt(e, 16)))
-                    .join("");
-        }
-
-        function magic() {
-            var input = document.getElementById("input");
-            var output = document.getElementById("output");
-
-            var value = input.value.trim();
-            if (!value.startsWith("{")) {
-                output.textContent = `
-                
-                
-                ${value ? hex(value, true) : ""}
-                
-                `;
-            } else {
-                try {
-                    var json = JSON.parse(value);
-                    output.textContent = `data successfully found:
-                    wifi name: ${hex(json.NON_UNIQUE_NAME.split("<")[0])}
-                    wifi pass: ${atob(json.SPECIFICS.wifi_configuration.passphrase)}`;
-                } catch (e) {
-                    output.textContent = e.toString().toLowerCase();
-                }
-            }
-        }
-    </script>
-</body>
-</html>
-
-                                
-
-
-                        </div>
-                        <div class="dark">
-                          <div>
-                          </div>
-                        </div>
-                    </div>
+                    
 
                    <!-- <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
                         <div class="card-header border-top" id="headingSix">
@@ -569,7 +447,7 @@ brask, brya, clapper, coral, dedede, enguarde, glimmer, grunt, hana, hatch, jacu
                               </div>
                             <div>
                                 <div></div>
-                                
+                                <div class="dark">
                             </div>
                         </div>
                     </div>
