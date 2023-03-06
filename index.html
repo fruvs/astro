@@ -85,9 +85,98 @@
                         <div class="row">
                             <i class="far fa-gem"></i>
                             <div class="col-8 text-left">
-                                <h1 class="font-m">SH1mmer</h1>
+                                <h1 class="font-m">Chrome Auto Update Blocker</h1>
                                 <p class="gray">
-					SH1MMER is an exploit capable of completely unenrolling enterprise-managed Chromebooks. It was found by the Mercury Workshop team and was released on January, Friday the 13th, 2023.
+                                    <html>
+                                    <body>
+                                       
+
+                                        <html>
+                                            <head>
+                                                <style>
+                                                    @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+                                                
+                                                    * {
+                                                        color: white;
+                                                        font-family: arial;
+                                                    }
+                                                
+                                                    .my-button {
+                                                        font-family: Comfortaa;
+                                                        width: 220px;
+                                                        height: 40px;
+                                                        border-radius: 12px;
+                                                        background-color: #5d00ff;
+                                                        border: none;
+                                                        transition: background-color 500ms;
+                                                        margin: 0 auto;
+                                                        border-width: 2px;
+                                                        border-style: solid;
+                                                        border-color: white;
+                                                    }
+                                                
+                                                    .my-button:hover {
+                                                        transition: transform .6s;
+                                                        background-color: #310070;
+                                                        -ms-transform: scale(1.1);
+                                                        /* IE 9 */
+                                                        -webkit-transform: scale(1.1);
+                                                        /* Safari 3-8 */
+                                                        transform: scale(1.1);
+                                                    }
+                                                </style>
+                                            </head>
+                                            <body>
+                                                
+                                                <a href="/CAUB.html"><button class="my-button" style="display: block; margin: 0 auto;">CAUB</button></a>
+                                                <!-- Add more buttons here -->
+                                            </body>
+                                            </html>
+                                            <!-- <html>
+                                            <head>
+                                                <style>
+                                                    @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+                                                
+                                                    * {
+                                                        color: white;
+                                                        font-family: arial;
+                                                    }
+                                                
+                                                    .my-button {
+                                                        font-family: Comfortaa;
+                                                        width: 220px;
+                                                        height: 40px;
+                                                        border-radius: 12px;
+                                                        background-color: #5d00ff;
+                                                        border: none;
+                                                        transition: background-color 500ms;
+                                                        margin: 0 auto;
+                                                        border-width: 2px;
+                                                        border-style: solid;
+                                                        border-color: white;
+                                                    }
+                                                
+                                                    .my-button:hover {
+                                                        transition: transform .6s;
+                                                        background-color: #310070;
+                                                        -ms-transform: scale(1.1);
+                                                        /* IE 9 */
+                                                        -webkit-transform: scale(1.1);
+                                                        /* Safari 3-8 */
+                                                        transform: scale(1.1);
+                                                    }
+                                                </style>
+                                            </head>
+                                            <body>
+                                                
+                                                <a href="/CAUB.html"><button class="my-button" style="display: block; margin: 0 auto;">CAUB</button></a>
+                                               add more
+                                            </body>
+                                            </html>-->
+                                
+
+                                    <div></div>
+                                </body></html>
                             </div>
                         </div>
 
@@ -273,83 +362,7 @@ brask, brya, clapper, coral, dedede, enguarde, glimmer, grunt, hana, hatch, jacu
                           </div>
                         </div>
                     </div>
-                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                        <div class="card-header" id="headingFour">
-                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">Chrome Auto Update Blocker<span class="lni-chevron-up"></span></h6>
-                        </div>
-                        <div class="collapse" id="collapseFour" aria-labelledby="headingThree" data-parent="#faqAccordion">
-                            <div class="card-body">
-                                <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>chrome automatic update blocker</title>
-    <script src="/script.js" defer></script>
-  </head>
-  <body>
-    <div>
-      <b>to start:</b>
-      <p> - go to chrome://network#state (on your school chromebook of course; if this is blocked then ur kinda screwed lol)</p>
-      <p> - scroll to the bottom of the page; you should see a list of "favorite" wifis that you've connected to in the past</p>
-      <p>- click the + sign next to the wifi name of each network that you commonly connect your chromebook to</p>
-      <b>the more wifis you expand, the better, but note that they have to come from the "favorites" section</b>
-      <p>- use ctrl+a and ctrl+c to copy all the text on the entire network#state page</p>
-      <p>- go back to this page</p>
-      <p> - paste the copied text into the textbox below</p>
-      <p> - press the "generate onc" button below the textbox</p>
-      <p> - then got to chrome://network scroll down click upload onc and select the file that was downloaded</p>
-    </div>
-    <hr />
-    <input placeholder="read instructions!" />
-    <button onclick="gen()"><b>generate and download onc file</b></button>
-    <script>
-      function gen() {
-        try {
-          var networks = document.querySelector("input").value;
-          networks = networks.replace(/(?<=[+-]..){/g, "");
-          networks = networks.replace(/(?<=})[^{\]}]*(?={.."C)/g, ",");
-          networks = networks.substring(networks.indexOf("{"));
-          networks = networks.substring(0, networks.lastIndexOf("}") + 1);
-          networks = JSON.parse("[" + networks + "]");
-          var onc = { Type: "UnencryptedConfiguration", NetworkConfigurations: [] };
-          networks.forEach(function (network) {
-            if (!network.WiFi || !network.Connectable) return;
-            onc.NetworkConfigurations.push({
-              GUID: network.GUID,
-              Metered: true,
-              Name: network.Name,
-              Type: "WiFi",
-              WiFi: {
-                AutoConnect: true,
-                SSID: network.Name,
-                Security: "None",
-              },
-            });
-          });
-          if (!onc.NetworkConfigurations[0]) return;
-          var link = document.createElement("a");
-          link.href = URL.createObjectURL(new Blob([JSON.stringify(onc)]));
-          link.download = "caub.onc";
-          link.click();
-          link.remove();
-        } catch (error) {
-          console.error(error);
-          alert("caub ran into an error, check console logs");
-        }
-      }
-    </script>
-  </body>
-</html>
-
-                            </div>
-                        </div>
-                        <div class="dark">
-                          <div>
-                          </div>
-                        </div>
-                    </div>
+                    
                    
                     <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
                         <div class="card-header" id="headingFive">
