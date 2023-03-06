@@ -153,10 +153,64 @@
             })
         </script>
                 </div>
-                <div class="card-footer border-top">
-                    Astro Bypasses by Fruvs#7642
-                     </html>
-                </div>
+            </script>
+            <section class="bg-client">
+                 <footer class="text-center small tm-footer">
+                      Astro Bypasses
+                  <br>
+                 Made By Fruvs#7642
+                </footer>
+            </section>
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <span class="close"></span>
+            <div class="modal-content">
+                <h1>Astro</h1>
             </div>
+    
         </div>
-    </div>
+        <script>
+            window.onscroll = function() {
+                scrollFunction()
+            };
+    
+            function scrollFunction() {
+                if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                    document.getElementById("myNAV").style.backgroundColor = "black";
+                    document.getElementById("myNAV").style.padding = "10px 10px";
+                } else {
+                    document.getElementById("myNAV").style.padding = "50px 10px";
+                    document.getElementById("myNAV").style.backgroundColor = "rgba(255, 0, 0, 0.00)";
+                }
+            }
+        </script>
+        <script>
+    
+            var modal = document.getElementById("myModal");
+    
+            
+            var btn = document.getElementById("myBtn");
+    
+           
+            var span = document.getElementsByClassName("close")[0];
+    
+            
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+    
+           
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+    
+           
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    </body></html>
+    
+            
