@@ -1,16 +1,67 @@
-<html><head><link href="/css/style.css" rel="stylesheet">
-
-
+<html>
+<head>
+	<link href="/css/style.css" rel="stylesheet">
 	<base target="_blank">
+	<style>
+		body {
+			background: linear-gradient(to bottom right, purple, blue, red);
+			background-size: 200% 200%;
+			animation: gradient 10s ease infinite;
+		}
+		
+		@keyframes gradient {
+			0% {
+				background-position: 0% 0%;
+			}
+			50% {
+				background-position: 100% 100%;
+			}
+			100% {
+				background-position: 0% 0%;
+			}
+		}
+		
+		@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+		
+		* {
+			color: white;
+			font-family: arial;
+			text-align: center;
+		}
+		
+		button {
+			font-family: Comfortaa;
+			width: 220px;
+			height: 40px;
+			border-radius: 12px;
+			background-color: #5D02D8;
+			border: none;
+			transition: background-color 500ms;
+			margin: 0 auto;
+			border-width: 2px;
+			border-style: solid;
+			border-color: white;
+		}
+		
+		.button:hover {
+			transition: transform .6s;
+			background-color: #5D02D8;
+			-ms-transform: scale(1.1);
+			/* IE 9 */
+			-webkit-transform: scale(1.1);
+			/* Safari 3-8 */
+			transform: scale(1.1);
+		}
+	</style>
 </head>
-
-<body><button class="button">Open proxy</button>
+<body>
+	<button class="button">Open proxy</button>
 	<script>
 		var urlObj = new window.URL(window.location.href);
 		var url = "https://www.mercuryforyou.tk";
 		if (url) {
 			var win;
-
+			
 			document.querySelector('button').onclick = function () {
 				if (win) {
 					win.focus();
@@ -32,44 +83,5 @@
 			};
 		}
 	</script>
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
-
-		* {
-			color: white;
-			font-family: arial;
-			text-align: center;
-		}
-
-		button {
-			font-family: Comfortaa;
-			width: 220px;
-			height: 40px;
-			border-radius: 12px;
-			background-color: #5D02D8;
-			border: none;
-			transition: background-color 500ms;
-			margin: 0 auto;
-			border-width: 2px;
-			border-style: solid;
-			border-color: white;
-		}
-
-		.button:hover {
-			transition: transform .6s;
-			background-color: #5D02D8;
-			-ms-transform: scale(1.1);
-			/* IE 9 */
-			-webkit-transform: scale(1.1);
-			/* Safari 3-8 */
-			transform: scale(1.1);
-		}
-	</style>
-
-
-
-
-	<div></div>
-
-
-</body></html>
+</body>
+</html>
