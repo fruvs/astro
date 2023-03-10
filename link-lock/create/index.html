@@ -10,7 +10,7 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 
-  <title>Link Lock - Password-protect links</title>
+  <title>Link Lock</title>
 
   <!-- Styles -->
   <link rel="stylesheet" href="../style.css" type="text/css" />
@@ -62,7 +62,7 @@
   <!-- Project description -->
   <h1>Link Lock</h1>
   <div>
-<p>test</p>
+<p>Like the name suggests your able to lock your links now</p>
   </div>
 
   <hr />
@@ -109,24 +109,72 @@
 
   <!-- Output area -->
   <div class="output">
+    <style>.output input {
+      background-color: black;
+      color: white;
+    }
+    </style>
     <label for="output">output</label>
     <input type="text" id="output" readonly/>
     <button id="copy" onclick="onCopy('output')">Copy</button>
-    <a href="../hidden" id="bookmark" target="_blank"><button>Create Hidden Bookmark</button></a>
-    <a href="" id="open" target="_blank"><button>Open in New Tab</button></a>
     <!-- Special incantation to make TinyURL work -->
-    <form action="https://tinyurl.com/create.php" method="get" target="_blank" style="display: inline;">
-      <input type="hidden" id="source" name="source" value="indexpage" />
-      <input type="hidden" id="tinyurl" name="url" value = "" />
-      <button>Get Shortened Link</button>
     </form>
     <p class="alert">Copied</p>
   </div>
+  <head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+        * {
+            color: white;
+            font-family: arial;
+        }
+
+        .my-button {
+            font-family: Comfortaa;
+            width: 220px;
+            height: 40px;
+            border-radius: 12px;
+            background-color: #5d00ff;
+            border: none;
+            transition: background-color 500ms;
+            border-width: 2px;
+            border-style: solid;
+            border-color: white;
+        }
+
+        .my-button:hover {
+            transition: transform .6s;
+            background-color: #7e0000;
+            -ms-transform: scale(1.1);
+            /* IE 9 */
+            -webkit-transform: scale(1.1);
+            /* Safari 3-8 */
+            transform: scale(1.1);
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        a {
+            color: #7e0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <button onclick="window.location.href='https://bypasses.net'" class="my-button"><strong>Home</strong></button>
+
+
+        <!-- Add more buttons here -->
+    </div>
+</body>
 
   <!-- Page footer -->
   <footer>
   <hr />
-  <p class="copyright">Created by <a href="https://jstrieb.github.io">Jacob Strieb</a>.</p>
+
   </footer>
 </body>
 
