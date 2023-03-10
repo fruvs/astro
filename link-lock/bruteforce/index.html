@@ -8,7 +8,7 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 
-  <title>Brute Force Link Lock</title>
+  <title>Brute Force</title>
 
   <!-- Styles -->
   <link rel="stylesheet" href="../style.css" type="text/css" />
@@ -20,10 +20,7 @@
 </head>
 
 <body>
-  <!-- View on GitHub ribbon -->
-  <a href="https://github.com/jstrieb/link-lock" target="_blank">
-    <img class="ribbon" src="../corner-ribbon-minified.svg" alt="View on GitHub" />
-  </a>
+
 
   <!-- Explanation for those who do not have JavaScript enabled -->
   <noscript>
@@ -32,15 +29,13 @@
 
     <p>This application is entirely programmed in JavaScript. This was done intentionally, so that all encryption and decryption happens client-side. This means the code runs as a distributed application, relying only on GitHub Pages for infrastructure. It also means that no data about locked links is ever stored on a server. The code is designed to be auditable so users can investigate what is happening behind the scenes.</p>
 
-    <p>If you still want to run the application, I encourage you to clone the <a href="https://github.com/jstrieb/link-lock">source code on GitHub</a>. That way you can disable JavaScript only for trusted files on your local machine.</p>
+
   </div>
   </noscript>
 
   <!-- Introduction -->
   <h1>Brute Force Link Lock URLs</h1>
-  <p>"Brute forcing" a password is the act of guessing it by brute force – literally trying all passwords until one works. This page is a simple, proof-of-concept brute force application. It is designed to decrypt <a href="https://github.com/jstrieb/link-lock" target="_blank">Link Lock</a> URLs by trying every single possible password. It is not optimized in any way, and does minimal error-checking.</p>
-  <p>For more information about brute forcing Link Lock URLs, read the open <a href="https://github.com/jstrieb/link-lock/issues/1" target="_blank">GitHub issue</a> about it.</p>
-  <p>For a command-line brute force application that performs parallel processing using all cores of the CPU, check out <a href="https://github.com/jstrieb/bruteforce-link-lock">this project</a>.</p>
+  <p>"Brute forcing" a password is the act of guessing it by brute force – literally trying all passwords until one works. This page is a simple, proof-of-concept brute force application. Its designed to decrypt URLs by trying every single possible password.</p>
 
   <hr />
 
@@ -57,7 +52,13 @@
   <hr />
 
   <!-- Output area -->
+  
   <div class="output">
+    <style>.output input {
+      background-color: black;
+      color: white;
+    }
+    </style>
     <label for="output">brute-forced password</label>
     <input type="text" id="output" />
   </div>
@@ -65,8 +66,55 @@
   <!-- Page footer -->
   <footer>
   <hr />
-  <p class="copyright">Created by <a href="https://jstrieb.github.io">Jacob Strieb</a>.</p>
+  <head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+        * {
+            color: white;
+            font-family: arial;
+        }
+
+        .my-button {
+            font-family: Comfortaa;
+            width: 220px;
+            height: 40px;
+            border-radius: 12px;
+            background-color: #5d00ff;
+            border: none;
+            transition: background-color 500ms;
+            border-width: 2px;
+            border-style: solid;
+            border-color: white;
+        }
+
+        .my-button:hover {
+            transition: transform .6s;
+            background-color: #7e0000;
+            -ms-transform: scale(1.1);
+            /* IE 9 */
+            -webkit-transform: scale(1.1);
+            /* Safari 3-8 */
+            transform: scale(1.1);
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        a {
+            color: #7e0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <button onclick="window.location.href='https://bypasses.net'" class="my-button"><strong>Home</strong></button>
+
+
+        <!-- Add more buttons here -->
+    </div>
+</body>
   </footer>
 </body>
-
 </html>
