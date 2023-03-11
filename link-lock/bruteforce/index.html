@@ -1,71 +1,362 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
 <head>
   <!-- Metadata -->
   <meta charset="utf-8" />
   <meta name="author" content="Jacob Strieb" />
-  <meta name="description" content="Brute force password-protected links created with Link Lock from within the browser." />
+  <meta name="description" content="Password protect links using AES in the browser." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
   <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 
-  <title>Brute Force</title>
+  <title>Decrypt</title>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="../style.css" type="text/css" />
+  <style>/**
+    * Created by Jacob Strieb
+    * May 2020
+    */
+   
+   
+   /*******************************************************************************
+    * Element styles
+    ******************************************************************************/
+   
+    html {
+     font-family: sans-serif;
+     padding: 10px;
+   }
+   
+   body {
+     padding: 15px;
+     display: block;
+     margin: auto;
+     max-width: 66ch;
+     background: linear-gradient(to bottom right, purple, darkblue, blue, darkblue, purple);
+     background-size: 400% 400%;
+     animation: gradient 10s ease infinite;
+   }
+   input, textarea {
+     padding: 10px;
+     border: 0.5px solid black;
+     border-radius: 3px;
+     margin-bottom: 15px;
+     box-sizing: border-box;
+     width: 100%;
+     resize: none;
+     font-family: sans-serif;
+     color: white; /* set text color inside input/textarea to white */
+     background-color: black; /* set background color of input/textarea to black */
+   }
+   
+   * {
+     color: white;
+   }
+   
+   @keyframes gradient {
+     0% {
+       background-position: 0% 50%;
+     }
+     50% {
+       background-position: 100% 50%;
+     }
+     100% {
+       background-position: 0% 50%;
+     }
+   }
+   
+   body {
+     padding: 15px;
+     display: block;
+     margin: auto;
+     max-width: 66ch;
+   }
+   
+   p {
+     text-align: justify;
+   }
+   
+   ul, ol {
+     padding-left: 1em;
+   }
+   
+   ol li {
+     margin-bottom: 1em;
+   }
+   
+   button {
+     padding: 11px;
+     background: rgb(95, 158, 160);
+     color: white;
+     border: 0.5px solid white;
+     border-radius: 5px;
+     margin-top: 5px;
+     margin-right: 5px;
+     cursor: pointer;
+     font-weight: bold;
+     white-space: nowrap;
+   }
+   
+   label {
+     display: block;
+     font-variant: small-caps;
+     margin-bottom: 5px;
+   }
+   
+   summary {
+     font-variant: small-caps;
+     margin-bottom: 5px;
+     user-select: none;
+   }
+   
+   input, textarea {
+     padding: 10px;
+     border: 0.5px solid black;
+     border-radius: 3px;
+     margin-bottom: 15px;
+     box-sizing: border-box;
+     width: 100%;
+     resize: none;
+     font-family: sans-serif;
+   }
+   
+   input[type="checkbox"] {
+     cursor: pointer;
+     margin-right: 0;
+   }
+   
+   hr {
+     margin-top: 3em;
+     margin-bottom: 3em;
+     border: 0;
+     border-top: 0.5px solid rgba(200, 200, 200, 1);
+   }
+   
+   footer hr {
+     margin-bottom: 1em;
+     border-top: 0.5px solid black;
+   }
+   
+   footer p {
+     text-align: center;
+   }
+   
+   *[aria-disabled="true"] {
+     pointer-events: none;
+     cursor: not-allowed;
+     user-select: none;
+   }
+   
+   code {
+     font-family: monospace, monospace;
+     padding: 0 3px;
+   }
+   
+   
+   /*******************************************************************************
+    * Classes
+    ******************************************************************************/
+   
+   /* View on GitHub SVG ribbon */
+   @media (max-width: 100ch) {
+     .ribbon {
+       width: 100px;
+       height: 100px;
+     }
+   }
+   
+   .ribbon {
+     position: absolute;
+     top: 0;
+     right: 0;
+   }
+   
+   
+   /* Error area */
+   .red-border {
+     border: 3px solid red;
+     padding: 2em;
+   }
+   
+   .error, .error p {
+     text-align: center;
+   }
+   
+   
+   /* Password & Confirm Password inputs */
+   .split-row {
+     display: flex;
+     flex-flow: row wrap;
+     justify-content: space-between;
+     align-items: center;
+   }
+   
+   .password {
+     flex: 1;
+   }
+   
+   .confirm-password {
+     flex: 1;
+     margin-left: 20px;
+   }
+   
+   
+   
+   /* Advanced settings */
+   #advanced-label {
+     cursor: pointer;
+     margin-bottom: 10px;
+   }
+   
+   .advanced {
+     display: flex;
+     flex-flow: row wrap;
+   }
+   
+   .advanced .labeled-input {
+     display: flex;
+     flex-flow: row-reverse nowrap;
+     justify-content: flex-end;
+   }
+   
+   .advanced .labeled-input label {
+     width: auto;
+     margin-right: 20px;
+     white-space: nowrap;
+     cursor: pointer;
+   }
+   
+   .advanced .labeled-input input {
+     width: auto;
+     margin-right: 5px;
+   }
+   
+   
+   /* Output area */
+   .output input {
+     background: rgba(235, 235, 235, 1);
+   }
+   
+   .alert {
+     opacity: 0;
+     transition: opacity 0.25s;
+   }
+   
+   
+   /* Bookmarks that look like buttons, but different */
+   .bookmark {
+     padding: 11px;
+     background: none;
+     color: rgb(95, 158, 160);
+     border: 3px solid;
+     border-radius: 5px;
+     font-weight: bold;
+     text-decoration: none;
+     margin-top: 5px;
+     margin-right: 5px;
+     cursor: pointer;
+     display: inline-block;
+     margin: auto;
+     text-align: center;
+   }
+   
+   .bookmark:hover {
+     background: rgb(95, 158, 160);
+     color: white;
+     border: 3px solid rgb(95, 158, 160);
+   }
+   
+   .bookmark[aria-disabled="true"] {
+     background: rgba(235, 235, 235, 1);
+     color: gray;
+   }
+   
+   /* Buttons on the same line as inputs */
+   .inline-button-container {
+     display: flex;
+     width: 100%;
+   }
+   
+   .inline-button-container * {
+     margin: 5px;
+   }
+   
+   .inline-button-container input {
+     margin-left: 0;
+   }
+   
+   input, textarea {
+     padding: 10px;
+     border: 0.5px solid black;
+     border-radius: 3px;
+     margin-bottom: 15px;
+     box-sizing: border-box;
+     width: 100%;
+     resize: none;
+     font-family: sans-serif;
+     color: white; /* set text color inside input/textarea to white */
+     background-color: black; /* set background color of input/textarea to black */
+   }
+   </style>
 
   <!-- Scripts -->
   <script type="text/javascript" src="../b64.js"></script>
   <script type="text/javascript" src="../api.js"></script>
-  <script type="text/javascript" src="bruteforce.js"></script>
+  <script type="text/javascript" src="decrypt.js"> </script>
 </head>
 
-<body>
-
-
+<body onload="main()">
+  <!-- View on GitHub ribbon -->
+ 
   <!-- Explanation for those who do not have JavaScript enabled -->
   <noscript>
-  <div style="border: 3px solid red; padding: 2em;">
-    <p>If you are seeing this, it means that you have JavaScript disabled. As a result, the application will not work properly for you. For example, none of the buttons will work.</p>
+  <div class="red-border">
+    <p>If you are seeing this, it means that you have JavaScript disabled. Please enable JavaScript to access the locked link.</p>
 
     <p>This application is entirely programmed in JavaScript. This was done intentionally, so that all encryption and decryption happens client-side. This means the code runs as a distributed application, relying only on GitHub Pages for infrastructure. It also means that no data about locked links is ever stored on a server. The code is designed to be auditable so users can investigate what is happening behind the scenes.</p>
-
-
   </div>
   </noscript>
 
-  <!-- Introduction -->
-  <h1>Brute Force Link Lock URLs</h1>
-  <p>"Brute forcing" a password is the act of guessing it by brute force – literally trying all passwords until one works. This page is a simple, proof-of-concept brute force application. Its designed to decrypt URLs by trying every single possible password.</p>
+  <!-- Display errors in a big red box -->
+  <div class="error red-border" style="display: none">
+    <p id="errortext">Error</p>
+    <button onclick="main()">Try again</button>
+    <a href="https://jstrieb.github.io/link-lock"><button>Lock a link</button></a>
+  </div>
+
+  <h1>Decrypt Link Lock URLs</h1>
+  <p>You can decrypt URLs without automatic redirection, making it useful for untrusted or blocked links, and even those with alternate domains.</p>
+
+  <p>This page is also useful if you think you have received a locked link, but it uses another domain, instead of <code>www.bypasses.net</code>.</p>
 
   <hr />
 
-  <!-- Main form -->
   <div class="form">
-    <label for="charset">charset</label>
-    <input type="text" id="charset" value="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" />
     <label for="encrypted-url">encrypted url</label>
     <input type="url" id="encrypted-url" oninput="document.querySelector('.alert').style.opacity = 0" />
-    <button onclick="onBruteForce()">Brute Force</button>
+    <label for="password">password</label>
+    <input type="password" id="password" />
+    <button onclick="onDecrypt()">Decrypt</button>
     <p class="alert">INVISIBLE</p>
   </div>
 
   <hr />
 
   <!-- Output area -->
-  
   <div class="output">
     <style>.output input {
       background-color: black;
       color: white;
     }
     </style>
-    <label for="output">brute-forced password</label>
-    <input type="text" id="output" />
+    <label for="output">output</label>
+    <input type="text" id="output" readonly/>
+    <button id="copy" onclick="onCopy('output')">Copy</button>
+    <a href="" id="open" target="_blank"><button>Open in New Tab</button></a>
+    <p class="alert" id="copy-alert">Copied</p>
+  
   </div>
-
-  <!-- Page footer -->
-  <footer>
-  <hr />
   <head>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
@@ -115,6 +406,9 @@
         <!-- Add more buttons here -->
     </div>
 </body>
-  </footer>
+
+  <!-- Page footer -->
 </body>
+</body>
+
 </html>
